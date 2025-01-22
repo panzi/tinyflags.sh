@@ -2,8 +2,19 @@
 
 all=(at bd be bj ch ci en fr gn ic id ir it jp lv mc mg ml ng pe pl pw ro sn so td ua refugee)
 
-function tinyflag () {
-    case $1 in
+codes=("$@")
+if [[ "${#codes[@]}" -eq 0 ]]; then
+    codes=("${all[@]}")
+fi
+
+index=0
+while [[ "$index" -lt "${#codes[@]}" ]]; do
+    if [[ "$index" -gt 0 ]]; then
+        echo -n ' '
+    fi
+    code="${codes[$index]}"
+
+    case "$code" in
         at) echo -n $'\x1B[48;2;201;8;42m\x1B[38;2;255;255;255m\U1FB0B\U1FB0B\U1FB0B\x1B[0m';;
         bd) echo -n $'\x1B[38;2;0;106;77m\U2590\x1B[48;2;0;106;77m\x1B[38;2;244;37;63m\U2B24\x1B[0m\x1B[38;2;0;106;77m\U2588\U258C\x1B[0m';;
         be) echo -n $'\x1B[38;2;0;0;0m\U2588\x1B[38;2;253;219;32m\U2588\x1B[38;2;240;48;62m\U2588\x1B[0m';;
@@ -35,38 +46,16 @@ function tinyflag () {
         refugee) echo -n $'\x1B[38;2;0;0;0m\x1B[48;2;241;105;64m\U1FB7A\U1FB7A\U1FB7A\x1B[0m';;
 
         all)
-            local first
-            first=1
-            for code in "${all[@]}"; do
-                if [[ "$first" -eq 0 ]]; then
-                    echo -n ' '
-                fi
-                tinyflag "$code"
-                first=0
-            done
+            codes=("${codes[@]:0:$((index+1))}" "${all[@]}" "${codes[@]:$((index+1))}")
             ;;
         *)
-            if [[ "$first" -eq 0 ]]; then
+            if [[ "$index" -gt 0 ]]; then
                 echo >&2
             fi
             echo "Error: Unsupported 2-letter country code: $1">&2
             exit 1
             ;;
     esac
-}
-
-first=1
-
-if [[ $# -eq 0 ]]; then
-    tinyflag all
-else
-    while [[ $# -gt 0 ]]; do
-        if [[ "$first" -eq 0 ]]; then
-            echo -n ' '
-        fi
-        tinyflag "$1"
-        shift
-        first=0
-    done
-fi
+    index=$((index+1))
+done
 echo
