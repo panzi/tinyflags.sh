@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-all=(at bd be bj ch ci en fr gn id ir it jp lv mc mg ml ng pe pl pw ro so td ua)
+all=(at bd be bj ch ci en fr gn ic id ir it jp lv mc mg ml ng pe pl pw ro so td ua)
 
 function tinyflag () {
     case $1 in
@@ -13,6 +13,7 @@ function tinyflag () {
         en) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;205;0;1m\U2501\U254B\U2501\x1B[0m';;
         fr) echo -n $'\x1B[38;2;0;33;83m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;207;8;33m\U2588\x1B[0m';;
         gn) echo -n $'\x1B[38;2;207;8;33m\U2588\x1B[38;2;252;210;14m\U2588\x1B[38;2;0;149;96m\U2588\x1B[0m';;
+        ic) echo -n $'\x1B[38;2;255;255;255m\U2588\x1B[38;2;7;104;169m\U2588\x1B[38;2;255;204;0m\U2588\x1B[0m';;
         id) echo -n $'\x1B[48;2;255;0;0m\x1B[38;2;255;255;255m\U2584\U2584\U2584\x1B[0m';;
         ir) echo -n $'\x1B[38;2;14;156;98m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;255;137;60m\U2588\x1B[0m';;
         it) echo -n $'\x1B[38;2;0;147;68m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;207;39;52m\U2588\x1B[0m';;
