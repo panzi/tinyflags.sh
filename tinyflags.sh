@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-all=(at bd be bj ch ci en fr gn ic id ir it jp lv mc mg ml ng pe pl pw ro sn so td ua refugee)
+all=(at bd be bj ch ci en fr gn ic id ir it jp lv ma mc mn mg ml ng pe pl pw ro sn so td tr ua vn refugee jollyroger)
 
 codes=("$@")
 if [[ "${#codes[@]}" -eq 0 ]]; then
@@ -30,7 +30,9 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
         it) echo -n $'\x1B[38;2;0;147;68m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;207;39;52m\U2588\x1B[0m';;
         jp) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;182;0;44m \U2B24 \x1B[0m';;
         lv) echo -n $'\x1B[48;2;158;29;50m\x1B[38;2;255;255;255m\U2501\U2501\U2501\x1B[0m';;
+        ma) echo -n $'\x1B[48;2;194;34;41m\x1B[38;2;0;98;48m \U26E4 \x1B[0m';;
         mc) echo -n $'\x1B[48;2;207;8;33m\x1B[38;2;255;255;255m\U2584\U2584\x1B[0m';;
+        mn) echo -n $'\x1B[48;2;219;26;45m\x1B[38;2;255;212;0m\U11A9E\x1B[48;2;0;102;180m \x1B[38;2;219;26;45m\U2588\x1B[0m';;
         mg) echo -n $'\x1B[38;2;255;255;255m\U2588\x1B[48;2;249;64;55m\x1B[38;2;0;133;58m\U2584\U2584\x1B[0m';;
         ml) echo -n $'\x1B[38;2;12;182;55m\U2588\x1B[38;2;252;210;14m\U2588\x1B[38;2;207;8;33m\U2588\x1B[0m';;
         ng) echo -n $'\x1B[38;2;0;136;80m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;0;136;80m\U2588\x1B[0m';;
@@ -41,9 +43,15 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
         sn) echo -n $'\x1B[48;2;0;134;61m \x1B[38;2;0;134;61m\x1B[48;2;253;240;64m\U2605\x1B[48;2;228;20;30m \x1B[0m';;
         so) echo -n $'\x1B[48;2;63;144;223m\x1B[38;2;255;255;255m \U2605 \x1B[0m';;
         td) echo -n $'\x1B[38;2;0;33;100m\U2588\x1B[38;2;254;204;0m\U2588\x1B[38;2;199;4;44m\U2588\x1B[0m';;
+        tr) echo -n $'\x1B[38;2;227;10;23m\U2590\x1B[48;2;227;10;23m\x1B[38;2;255;255;255m\U262A \x1B[38;2;227;10;23m\U2590\x1B[0m';;
         ua) echo -n $'\x1B[48;2;0;86;184m\x1B[38;2;255;216;0m\U2584\U2584\U2584\x1B[0m';;
+        vn) echo -n $'\x1B[48;2;219;32;23m\x1B[38;2;255;255;0m \U2605 \x1B[0m';;
+
+        # almost, but not good enough
+        # il) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;0;53;185m\x1B[53m\x1B[4m \U2721 \x1B[0m';;
 
         refugee) echo -n $'\x1B[38;2;0;0;0m\x1B[48;2;241;105;64m\U1FB7A\U1FB7A\U1FB7A\x1B[0m';;
+        jollyroger|jolly-roger) echo -n $'\x1B[48;2;0;0;0m\x1B[38;2;255;255;255m \U1F571 \x1B[0m';;
 
         all)
             codes=("${codes[@]:0:$((index+1))}" "${all[@]}" "${codes[@]:$((index+1))}")
