@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-all=(at bd be bj ch ci en fr gn gw ic id ir it jp lv ma mc mn mg ml ng pe pl pw ro sn so td tr ua vn refugee jollyroger)
+all=(at bd be bj ch ci en fr gn gw ic id ir it jp lv ma mc mn mg ml ng pe pl pw ro sn so td tr ua vn refugee redcross jollyroger)
 
 codes=("$@")
 if [[ "${#codes[@]}" -eq 0 ]]; then
@@ -52,6 +52,7 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
         # il) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;0;53;185m\x1B[53m\x1B[4m \U2721 \x1B[0m';;
 
         refugee) echo -n $'\x1B[38;2;0;0;0m\x1B[48;2;241;105;64m\U1FB7A\U1FB7A\U1FB7A\x1B[0m';;
+        redcross|red-cross) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;218;18;26m \U1F7A7 \x1B[0m';;
         jollyroger|jolly-roger) echo -n $'\x1B[48;2;0;0;0m\x1B[38;2;255;255;255m \U1F571 \x1B[0m';;
 
         all)
