@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-all=(at bd be bj ch ci en fr gn ic id ir it jp lv ma mc mn mg ml ng pe pl pw ro sn so td tr ua vn refugee jollyroger)
+all=(at bd be bj ch ci en fr gn gw ic id ir it jp lv ma mc mn mg ml ng pe pl pw ro sn so td tr ua vn refugee jollyroger)
 
 codes=("$@")
 if [[ "${#codes[@]}" -eq 0 ]]; then
@@ -19,11 +19,12 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
         bd) echo -n $'\x1B[38;2;0;106;77m\U2590\x1B[48;2;0;106;77m\x1B[38;2;244;37;63m\U2B24\x1B[0m\x1B[38;2;0;106;77m\U2588\U258C\x1B[0m';;
         be) echo -n $'\x1B[38;2;0;0;0m\U2588\x1B[38;2;253;219;32m\U2588\x1B[38;2;240;48;62m\U2588\x1B[0m';;
         bj) echo -n $'\x1B[38;2;0;136;80m\U2588\x1B[48;2;252;210;14m\x1B[38;2;233;8;41m\U2584\U2584\x1B[0m';;
-        ch) echo -n $'\x1B[38;2;218;41;28m\U2590\x1B[48;2;218;41;28m\x1B[38;2;255;255;255m\U1F7A6\x1B[0m\x1B[38;2;218;41;28m\U258C\x1B[0m';;
+        ch) echo -n $'\x1B[38;2;218;41;28m\U2590\x1B[48;2;218;41;28m\x1B[38;2;255;255;255m\U1F7A7\x1B[0m\x1B[38;2;218;41;28m\U258C\x1B[0m';;
         ci) echo -n $'\x1B[38;2;247;127;0m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;0;158;96m\U2588\x1B[0m';;
         en) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;205;0;1m\U2501\U254B\U2501\x1B[0m';;
         fr) echo -n $'\x1B[38;2;0;33;83m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;207;8;33m\U2588\x1B[0m';;
         gn) echo -n $'\x1B[38;2;207;8;33m\U2588\x1B[38;2;252;210;14m\U2588\x1B[38;2;0;149;96m\U2588\x1B[0m';;
+        gw) echo -n $'\x1B[48;2;207;8;33m\x1B[38;2;0;0;0m\U2605\x1B[48;2;252;210;14m\x1B[38;2;0;159;71m\U2584\U2584\x1B[0m';;
         ic) echo -n $'\x1B[38;2;255;255;255m\U2588\x1B[38;2;7;104;169m\U2588\x1B[38;2;255;204;0m\U2588\x1B[0m';;
         id) echo -n $'\x1B[48;2;255;0;0m\x1B[38;2;255;255;255m\U2584\U2584\U2584\x1B[0m';;
         ir) echo -n $'\x1B[38;2;14;156;98m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;255;137;60m\U2588\x1B[0m';;
