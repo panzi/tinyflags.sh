@@ -12,9 +12,9 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
     if [[ "$index" -gt 0 ]]; then
         echo -n ' '
     fi
-    code="${codes[$index]}"
+    code="$(echo "${codes[$index],,}"| tr -d ' -')"
 
-    case "$code" in
+    case "${code}" in
         at) echo -n $'\x1B[48;2;201;8;42m\x1B[38;2;255;255;255m\U1FB0B\U1FB0B\U1FB0B\x1B[0m';;
         bd) echo -n $'\x1B[38;2;0;106;77m\U2590\x1B[48;2;0;106;77m\x1B[38;2;244;37;63m\U2B24\x1B[0m\x1B[38;2;0;106;77m\U2588\U258C\x1B[0m';;
         be) echo -n $'\x1B[38;2;0;0;0m\U2588\x1B[38;2;253;219;32m\U2588\x1B[38;2;240;48;62m\U2588\x1B[0m';;
@@ -52,8 +52,8 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
         # il) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;0;53;185m\x1B[53m\x1B[4m \U2721 \x1B[0m';;
 
         refugee) echo -n $'\x1B[38;2;0;0;0m\x1B[48;2;241;105;64m\U1FB7A\U1FB7A\U1FB7A\x1B[0m';;
-        redcross|red-cross) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;218;18;26m \U1F7A7 \x1B[0m';;
-        jollyroger|jolly-roger) echo -n $'\x1B[48;2;0;0;0m\x1B[38;2;255;255;255m \U1F571 \x1B[0m';;
+        redcross) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;218;18;26m \U1F7A7 \x1B[0m';;
+        jollyroger) echo -n $'\x1B[48;2;0;0;0m\x1B[38;2;255;255;255m \U1F571 \x1B[0m';;
         finish) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;0;0;0m\U1FB24\U1FB24\U1FB24\x1B[0m';;
 
         all)
