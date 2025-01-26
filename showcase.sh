@@ -14,11 +14,11 @@ cat <<EOF
          $(./tinyflags.sh lv)                 $(./tinyflags.sh ma)            $(./tinyflags.sh mc)            $(./tinyflags.sh mn)               $(./tinyflags.sh mg)
      Latvia (lv)         Morocco (ma)   Monaco (mc)   Mongolia (mn)   Madagascar (mg)
 
-         $(./tinyflags.sh ml)                 $(./tinyflags.sh ng)            $(./tinyflags.sh pe)           $(./tinyflags.sh pl)              $(./tinyflags.sh pw)
-      Mali (ml)          Nigeria (ng)    Peru (pe)     Poland (pl)      Palau (pw)
+         $(./tinyflags.sh ml)                 $(./tinyflags.sh ng)            $(./tinyflags.sh pe)           $(./tinyflags.sh pl)               $(./tinyflags.sh pw)
+      Mali (ml)          Nigeria (ng)    Peru (pe)     Poland (pl)       Palau (pw)
 
-         $(./tinyflags.sh ro)                 $(./tinyflags.sh sn)            $(./tinyflags.sh so)           $(./tinyflags.sh td)              $(./tinyflags.sh tr)
-      Romania (ro)       Senegal (sn)   Somalia (so)   Chad (td)       Türkiye (tr)
+         $(./tinyflags.sh ro)                 $(./tinyflags.sh sn)            $(./tinyflags.sh so)           $(./tinyflags.sh td)               $(./tinyflags.sh tr)
+      Romania (ro)       Senegal (sn)   Somalia (so)   Chad (td)        Türkiye (tr)
 
          $(./tinyflags.sh ua)                 $(./tinyflags.sh vn)
      Ukraine (ua)        Vietnam (vn)
