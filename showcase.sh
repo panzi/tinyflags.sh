@@ -12,7 +12,7 @@ cat <<EOF
   Canary Islands (ic)   Indonesia (id)  Ireland (ir)   Italy (it)        Japan (jp)
 
          $(./tinyflags.sh lv)                 $(./tinyflags.sh ma)            $(./tinyflags.sh mc)            $(./tinyflags.sh mn)               $(./tinyflags.sh mg)
-     Latvia (lb)         Morocco (ma)   Monaco (mc)   Mongolia (mn)   Madagascar (mg)
+     Latvia (lv)         Morocco (ma)   Monaco (mc)   Mongolia (mn)   Madagascar (mg)
 
          $(./tinyflags.sh ml)                 $(./tinyflags.sh ng)            $(./tinyflags.sh pe)           $(./tinyflags.sh pl)              $(./tinyflags.sh pw)
       Mali (ml)          Nigeria (ng)    Peru (pe)     Poland (pl)      Palau (pw)
