@@ -1,29 +1,93 @@
 #!/usr/bin/bash
 
-cat <<EOF
+flags=(
+    at "Austria (at)"
+    bd "Bangladesh (bd)"
+    be "Belgium (be)"
+    bj "Benin (bj)"
+    ch "Switzerland (ch)"
+    ci "Côte d'Ivoire (ci)"
+    dk "Denmark (dk)"
+    en "England (en)"
+    fi "Finland (fi)"
+    fr "France (fr)"
+    gn "Guinea (gn)"
+    gw "Guinea-Bissau (gw)"
+    ic "Canary Islands (ic)"
+    id "Indonesia (id)"
+    ir "Ireland (ir)"
+    it "Italy (it)"
+    jp "Japan (jp)"
+    lv "Latvia (lv)"
+    ma "Morocco (ma)"
+    mc "Monaco (mc)"
+    mn "Mongolia (mn)"
+    mg "Madagascar (mg)"
+    ml "Mali (ml)"
+    ng "Nigeria (ng)"
+    pe "Peru (pe)"
+    pl "Poland (pl)"
+    pw "Palau (pw)"
+    ro "Romania (ro)"
+    se "Sweden (se)"
+    sn "Senegal (sn)"
+    so "Somalia (so)"
+    td "Chad (td)"
+    tr "Türkiye (tr)"
+    ua "Ukraine (ua)"
+    vn "Vietnam (vn)"
+    refugee "Refugee"
+    redcross "Red Cross"
+    jollyroger "Jolly Roger"
+    finish "Finish"
+)
 
-         $(./tinyflags.sh at)                 $(./tinyflags.sh bd)           $(./tinyflags.sh be)           $(./tinyflags.sh bj)               $(./tinyflags.sh ch)
-     Austria (at)      Bangladesh (bd)  Belgium (be)   Benin (bj)     Switzerland (ch)
+widths=(0 0 0 0 0)
 
-         $(./tinyflags.sh ci)                 $(./tinyflags.sh en)            $(./tinyflags.sh fr)           $(./tinyflags.sh gn)               $(./tinyflags.sh gw)
-   Côte d'Ivoire (ci)    England (en)   France (fr)    Guinea (gn)   Guinea-Bissau (gw)
+index=0
+while [[ $index -lt ${#flags[@]} ]]; do
+    label=${flags[$((index+1))]}
+    width=${#label}
+    width_index=$((($index/2)%5))
+    max_width=${widths[$width_index]}
+    if [[ $max_width -lt $width ]]; then
+        widths[$width_index]=$width
+    fi
+    index=$((index+2))
+done
 
-         $(./tinyflags.sh ic)                 $(./tinyflags.sh id)            $(./tinyflags.sh ir)           $(./tinyflags.sh it)               $(./tinyflags.sh jp)
-  Canary Islands (ic)   Indonesia (id)  Ireland (ir)   Italy (it)        Japan (jp)
+echo
+index=0
+while [[ $index -lt ${#flags[@]} ]]; do
+    for column in {0..4}; do
+        i=$((index+(column*2)))
+        if [[ $i -ge ${#flags[@]} ]]; then
+            break
+        fi
+        code=${flags[$i]}
+        flag=$(./tinyflags.sh "$code")
+        plain=$(echo "$flag"|sed 's/\x1B\[[;0-9]*m//g')
+        width=${#plain}
+        padd=$((widths[column]-width))
+        lpadd=$((padd/2))
+        rpadd=$((padd-lpadd))
+        printf "  %${lpadd}s%s%${rpadd}s" "" "$flag" ""
+    done
+    echo
+    for column in {0..4}; do
+        i=$((index+(column*2)+1))
+        if [[ $i -ge ${#flags[@]} ]]; then
+            break
+        fi
+        label=${flags[$i]}
+        width=${#label}
+        padd=$((widths[column]-width))
+        lpadd=$((padd/2))
+        rpadd=$((padd-lpadd))
+        printf "  %${lpadd}s%s%${rpadd}s" "" "$label" ""
+    done
+    echo
+    echo
 
-         $(./tinyflags.sh lv)                 $(./tinyflags.sh ma)            $(./tinyflags.sh mc)            $(./tinyflags.sh mn)               $(./tinyflags.sh mg)
-     Latvia (lv)         Morocco (ma)   Monaco (mc)   Mongolia (mn)   Madagascar (mg)
-
-         $(./tinyflags.sh ml)                 $(./tinyflags.sh ng)            $(./tinyflags.sh pe)           $(./tinyflags.sh pl)               $(./tinyflags.sh pw)
-      Mali (ml)          Nigeria (ng)    Peru (pe)     Poland (pl)       Palau (pw)
-
-         $(./tinyflags.sh ro)                 $(./tinyflags.sh sn)            $(./tinyflags.sh so)           $(./tinyflags.sh td)               $(./tinyflags.sh tr)
-      Romania (ro)       Senegal (sn)   Somalia (so)   Chad (td)        Türkiye (tr)
-
-         $(./tinyflags.sh ua)                 $(./tinyflags.sh vn)
-     Ukraine (ua)        Vietnam (vn)
-
-         $(./tinyflags.sh refugee)                 $(./tinyflags.sh red-cross)            $(./tinyflags.sh jolly-roger)           $(./tinyflags.sh finish)
-       Refugee            Red Cross     Jolly Roger     Finish
-
-EOF
+    index=$((index+10))
+done

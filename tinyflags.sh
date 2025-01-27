@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-all=(at bd be bj ch ci en fr gn gw ic id ir it jp lv ma mc mn mg ml ng pe pl pw ro sn so td tr ua vn refugee redcross jollyroger finish)
+all=(at bd be bj ch ci dk en fi fr gn gw ic id ir it jp lv ma mc mn mg ml ng pe pl pw ro se sn so td tr ua vn refugee redcross jollyroger finish)
 
 codes=("$@")
 if [[ "${#codes[@]}" -eq 0 ]]; then
@@ -21,7 +21,9 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
         bj) echo -n $'\x1B[38;2;0;136;80m\U2588\x1B[48;2;252;210;14m\x1B[38;2;233;8;41m\U2584\U2584\x1B[0m';;
         ch) echo -n $'\x1B[38;2;218;41;28m\U2590\x1B[48;2;218;41;28m\x1B[38;2;255;255;255m\U1F7A7\x1B[0m\x1B[38;2;218;41;28m\U258C\x1B[0m';;
         ci) echo -n $'\x1B[38;2;247;127;0m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;0;158;96m\U2588\x1B[0m';;
+        dk) echo -n $'\x1B[48;2;201;8;42m\x1B[38;2;255;255;255m\U1FB0B\U1FB1B\U1FB0B\x1B[0m';;
         en) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;205;0;1m\U2501\U254B\U2501\x1B[0m';;
+        fi) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;0;43;108m\U1FB0B\U1FB1B\U1FB0B\x1B[0m';;
         fr) echo -n $'\x1B[38;2;0;33;83m\U2588\x1B[38;2;255;255;255m\U2588\x1B[38;2;207;8;33m\U2588\x1B[0m';;
         gn) echo -n $'\x1B[38;2;207;8;33m\U2588\x1B[38;2;252;210;14m\U2588\x1B[38;2;0;149;96m\U2588\x1B[0m';;
         gw) echo -n $'\x1B[48;2;207;8;33m\x1B[38;2;0;0;0m\U2605\x1B[48;2;252;210;14m\x1B[38;2;0;159;71m\U2584\U2584\x1B[0m';;
@@ -41,6 +43,7 @@ while [[ "$index" -lt "${#codes[@]}" ]]; do
         pl) echo -n $'\x1B[48;2;255;255;255m\x1B[38;2;221;12;57m\U2584\U2584\U2584\x1B[0m';;
         pw) echo -n $'\x1B[38;2;0;154;255m\U2590\x1B[48;2;0;154;255m\x1B[38;2;255;255;0m\U2B24\x1B[0m\x1B[38;2;0;154;255m\U2588\U258C\x1B[0m';;
         ro) echo -n $'\x1B[38;2;0;43;127m\U2588\x1B[38;2;252;209;22m\U2588\x1B[38;2;206;17;38m\U2588\x1B[0m';;
+        se) echo -n $'\x1B[48;2;0;81;148m\x1B[38;2;254;204;0m\U1FB0B\U1FB1B\U1FB0B\x1B[0m';;
         sn) echo -n $'\x1B[48;2;0;134;61m \x1B[38;2;0;134;61m\x1B[48;2;253;240;64m\U2605\x1B[48;2;228;20;30m \x1B[0m';;
         so) echo -n $'\x1B[48;2;63;144;223m\x1B[38;2;255;255;255m \U2605 \x1B[0m';;
         td) echo -n $'\x1B[38;2;0;33;100m\U2588\x1B[38;2;254;204;0m\U2588\x1B[38;2;199;4;44m\U2588\x1B[0m';;
